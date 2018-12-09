@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<title>Notice Board</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+
+#recruitfromcollege {
+background-color: black;
+color: white;
+margin-left: 0px;
+width: 100%;
+font-family: "Times New Roman", Times, serif;
+}
+html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        
+
+        .vacancycard {
+            box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 1);
+			background-color: yellow;
+        }
+		
+		.testcard {
+            box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 1);
+			background-color:silver;
+        }
+		
+		.interviewcard {
+            box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 1);
+			background-color: #eaff7b;
+        }
+		
+	
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+
+</style>
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'index' %}" class="w3-bar-item w3-button">Home</a>
+      <a href="#home" class="w3-bar-item w3-button">Vacancies</a>
+      <a href="#hiringtest" class="w3-bar-item w3-button">Hiring Tests</a>
+	  <a href="#interview" class="w3-bar-item w3-button">Interviews</a>	
+    </div>
+  </div>
+</div>
+
+<!-- Navbar (sit on top) 
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Placement Portal,</b> IIIT Sri City</a>
+
+    <div class="w3-right w3-hide-small">
+	<a href="#recruit" class="w3-bar-item w3-button">Home</a>
+	<a href="#recruit" class="w3-bar-item w3-button">vacancies</a>
+      <a href="#about" class="w3-bar-item w3-button">Hiring test</a>
+      <a href="#contact" class="w3-bar-item w3-button">Interviews</a>
+    </div>
+  </div>
+</div>-->
+
+
+<div class="w3-content w3-padding" style="max-width:1564px">
+<br><br><br>
+
+
+<!--START OF VACANCIES SECTION--> 
+  <div class="w3-container w3-padding-32" id="home"><br>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege"><center><b>VACANCIES</b></h3>
+   </div>
+   
+   {% for i in Vacancys %}  
+   <div class="vacancycard">
+			<div class="container">
+				<p>This is to notify that <b>{{i.recruiter_name}}</b> is accepting applications for the post of a <b>{{i.designation}}</b> in their company.</p>
+				<p>Applicants are expected to be well-versed with <b>{{i.technical_skills}}</b>. Other skills that are expected of the candidate include: <b>{{i.other_skills}}</b></p>
+				<p>The salary to be offered to the selected candidates is expected to be <b>{{i.expected_salary}} INR per annum</b>. Applicants are requested to send over their CVs to careers@{{i.recruiter_name}}.com</p>			
+            </div>
+    </div>
+	<br>
+	{% endfor %}
+<br>
+			<!--<div class="card">
+				<div class="container">                
+                <ul>
+				<li>company name : </li>
+				<li>Job Title :</li>
+				<li>Technical skills required :</li>
+				<li>other skills :</li>
+				<li>salary offered :</li>
+				</ul>
+               </div>
+            </div>-->
+<!--END OF VACANCIES SECTION-->
+
+
+
+<!--START OF HIRING TESTS SECTION-->
+   <div class="w3-container w3-padding-32" id="hiringtest">
+	<br>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege"><center><b>HIRING TESTS</b></h3>
+   </div>
+	
+	{% for i in Hiringtests %}
+    <div class="testcard">
+			<div class="container">                
+                <p>{{i.recruiter_name}} will be conducting <b>Round no. {{i.round_number}}</b> of its hiring procedure in our college on <b>{{i.test_date}}</b>.</p>
+				<p>The model of the text is expected to be on the lines of <b>{{i.test_type}}</b>. Students who fulfil the minimum CGPA cutoff of having a <b>CGPA > {{i.gpa_cutoff}}</b> and who have been selected in the previous rounds (if any) are requested to be ready for the test.</p>
+			</div>
+    </div>
+	<br>
+    {% endfor %}
+<!--END OF HIRING TESTS SECTION-->
+<br>
+
+
+<!--START OF INTERVIEWS SECTION-->
+
+  <div class="w3-container w3-padding-32" id="interview"><br>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege"><center><b>INTERVIEWS</b></h3>
+   </div>
+ 
+
+{% for i in Interviews %}
+<div class="interviewcard">
+			<div class="container">                
+                <p><b>{{i.recruiter_name}}</b> will be conducting a round of interviews in our college on <b>{{i.date}}</b>.</p>
+				<p>Students have passed {{i.recruiter_name}}'s earlier rounds of hiring tests are to be prepared for the interview that will take place from {{i.start_time}} to {{i.end_time}} on {{i.date}}.</p>
+            </div>
+</div>
+{% endfor %}
+
+
+<br>
+<br>
+<!--END OF INTERVIEWS SECTION-->
+
+
+
+<footer class="w3-center w3-black w3-padding-16">
+  <p>An ASE-II Project By Group A-12</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+    </SCRIPT>
+</head>
+<title>IIITS Placement Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+#image1,#image2,#image3,#image4,#image5,#image6,#image7,#image8 {
+width: 1080px;
+height: 260px;
+
+}
+
+#image1:hover {opacity:0.8}
+#image2:hover {opacity:0.8}
+#image3:hover {opacity:0.8}
+#image4:hover {opacity:0.8}
+#image5:hover {opacity:0.8}
+#image6:hover {opacity:0.8}
+#image7:hover {opacity:0.8}
+#image8:hover {opacity:0.8}
+
+#recruitfromcollege {
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+}
+
+#testimony {
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+}
+
+.testcontainer {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.testcontainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.testcontainer img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.testcontainer span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .testcontainer {
+      text-align: center;
+  }
+  .testcontainer img {
+      margin: auto;
+-      float: none;
+      display: block;
+  }
+}
+
+</style>
+
+<body onload="noBack();" 
+  onpageshow="if (event.persisted) noBack();" onunload="">
+<!-- Navbar (sit on top) -->
+<div id="backtotop" class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#backtotop" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#recruit" class="w3-bar-item w3-button">Recruit</a>
+      <a href="#testimonials" class="w3-bar-item w3-button">Testimonials</a>
+	  <a href="{% url 'landing' %}" class="w3-bar-item w3-button" onclick="clicked()">Log Out</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="https://img.collegepravesh.com/2018/01/IIIT-Sri-City.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Placements @ IIIT Sri City</b></span></h1>
+  </div>
+</header>
+
+<!-- {{ name }} -->
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="recruit">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege" style="margin-top:20px;"><center><b>RECRUIT OUR COLLEGE STUDENTS</b></h3>
+  </div>
+
+
+<!--START USECASE MENU ITEMS-->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">View Student profiles</div>
+        <a href="{% url 'viewprofiles' %}"><img src="http://p10cdn4static.sharpschool.com/UserFiles/Servers/Server_170841/Image/New%20Release%20Images/Grad%20rates%202016.jpg" alt="Student profiles" style="width:100%" id="image1"></a>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">View Placement Statistics</div>
+        <a href="{% url 'stat' %}"><img src="https://datasciencedojo.com/wp-content/uploads/statistics-for-teachers-professional-development_137460_large.jpg" alt="Placement Statistics" style="width:100%" id="image2">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Schedule an Interview</div>
+        <!--<a href="{% url 'scheduleinterview' %}"><img src="https://careerconfidential.com/wp-content/uploads/2013/05/interview-1018333_1920-1080x600.png" alt="House" style="width:100%" id="image3"></a> -->
+        <a href="/scheduleinterview?name={{ name|urlencode }}"><img src="https://careerconfidential.com/wp-content/uploads/2013/05/interview-1018333_1920-1080x600.png" alt="House" style="width:100%" id="image3"></a> 
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Conduct a Hiring Test</div>
+        <a href="/hiringtest?name={{ name|urlencode }}"><img src="https://st2.depositphotos.com/5375910/9508/v/950/depositphotos_95082252-stock-illustration-exam-paper-vector-icon.jpg" alt="House" width="1080px" height="200px" style="width:100%" id="image4"></a>
+        <!-- <a href="{% url 'conducthiringtest' %}"><img src="https://st2.depositphotos.com/5375910/9508/v/950/depositphotos_95082252-stock-illustration-exam-paper-vector-icon.jpg" alt="House" width="1080px" height="200px" style="width:100%" id="image4"></a> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Notify about vacancies</div>
+       <a href="/vacancies?name={{ name|urlencode }}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopG9gtBVyzYdfUyCYMEFHaOHN6cmGcUWFBZTK36JnN_6JOKawPg" alt="House" style="width:100%" id="image5"></a> 
+       <!-- <a href="{% url 'addvacancies' %}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopG9gtBVyzYdfUyCYMEFHaOHN6cmGcUWFBZTK36JnN_6JOKawPg" alt="House" style="width:100%" id="image5"></a> -->
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">View Notice Board</div>
+        <a href="{% url 'noticeboard' %}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYXW1g2_CzInlrUYA5aNIET_5Gh3yS9Plhz3h7DfVmhkcjUyp" alt="House" style="width:100%" id="image6"></a>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Visit our Campus</div>
+        <a href="{% url 'visitcampus' %}"><img src="http://www.iiits.ac.in/iiits-content/uploads/2018/06/new-banner2.jpg" alt="House" style="width:100%" id="image7"></a>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Write a testimonial</div>
+        <a href="{% url 'writetestimonials' %}"><img src="https://billstoggery.com/wp-content/uploads/2017/08/testimonials.png" alt="House" style="width:100%" id="image8"></a>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Usecase Menu Items -->
+</div>
+
+
+
+<!--START TESTIMONIALS-->
+<hr><br>
+<div id="testimonials">
+<div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="testimony" style="margin-top:20px;"><center><b>TESTIMONIALS</b></h3>
+</div>
+
+<!--RETRIEVING TESTIMONIALS FROM DATABASE-->
+{% for i in Testimonials %}
+<div class="testcontainer">  
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5HBN_vbLu5pURUVEVLjim0v7xIQvRa02bMnRi1gnSYwTD2BG" alt="Avatar" style="width:90px">
+  <p><span>{{i.employee_name}}</span> from  <span> {{i.recruiter_name}}</span> says: </p>
+  <p><i><strong>"</strong>{{i.remarks}}<strong>"</strong></i></p>
+</div>
+{% endfor %}
+
+</div>
+<!--END TESTIMONIALS-->
+
+
+
+<script type="text/javascript">
+    function clicked() {
+       if (confirm('Are you sure you want to log out?')) {
+           yourformelement.submit();
+       } else {
+           return true;
+       }
+    }
+</script>
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>An ASE-II Project <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">By Group A-12</a></p>
+</footer>
+
+</body>
+</html>

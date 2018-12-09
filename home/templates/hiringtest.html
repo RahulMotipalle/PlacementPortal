@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+	width:550px;
+}
+</style>
+</head>
+<body bgcolor="peachpuff">
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'index' %}"><p>Return to Home</p></a>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<center><h3>Conduct a hiring test</h3></center>
+<br>
+<center>
+
+<!--FORM TO FILL DETAILS OF HIRING TEST-->
+<div class="container">
+  <form action="{% url 'conducthiringtest' %}" method="POST">
+	{%csrf_token %}
+	
+	<!--COMPANY NAME LABEL-->    
+	<label for="recruiter_name">Company Name</label>
+     <!-- <input type="text" id="recruiter_name" name="recruiter_name" required placeholder="Your Company's Name"> -->
+     <input type="text" id="recruiter_name" name="recruiter_name" required readonly value="{{ recruiter_name }}"> 
+	
+	<!--TEST TYPE LABEL-->    
+	<label for="test_type">Type of test:</label>
+     <input type="text" id="test_type" name="test_type" required placeholder="EG: Coding round/Aptitude Quiz/Technical interview etc.">
+	
+	<!--HIRING ROUND NUMBER LABEL-->	
+	<label for="round_number">Round Number:</label>
+     <input type="text" id="round_number" name="round_number" required placeholder="Specify which round of hiring, EG: 1/2/3 etc">
+	
+	<!--TEST DATE LABEL-->
+	<label for="test_date">Date of Examination:</label>
+     <input type="text" id="test_date" name="test_date" required placeholder="DD/MM/YYYY  (Enter the date on which you wish to conduct the test)">
+	
+
+	<!--MINIMUM GPA LABEL-->
+	<label for="gpa_cutoff">Minimum GPA required to appear for test:</label>
+     <input type="text" id="gpa_cutoff" name="gpa_cutoff" required placeholder="EG: 6.0/7.0">
+    
+
+    <input type="submit" onclick="clicked()" value="Submit">
+  </form>
+
+
+
+
+<!--FOR DISPLAYING POPUP MESSAGE ON CLICKING SUBMIT BUTTON-->
+<script type="text/javascript">
+    function clicked() {
+       if (confirm('Do you want to submit?')) {
+           yourformelement.submit();
+       } else {
+           return false;
+       }
+    }
+</script>
+
+
+
+</div>
+</center>
+</body>
+</html>

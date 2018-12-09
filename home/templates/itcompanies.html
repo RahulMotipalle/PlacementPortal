@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .card {
+			margin-left:10px;
+			margin-right:10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 0 16px;
+			background-color: #ffdab9;
+        }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: black;
+	    font-weight: bold;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="y" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+	  <a href="{% url 'browse' %}" class="w3-bar-item w3-button">All companies</a>
+      <a href="{% url 'corecompanies' %}" class="w3-bar-item w3-button">Core companies</a>
+      <a href="{% url 'studenthome' %}" class="w3-bar-item w3-button">Home</a>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<h2><center>VISITING COMPANIES</center></h2>
+<hr><br>
+<p>&emsp;&emsp;Displaying the list of all companies visiting this year, starting with the companies which have the highest packages to offer.....</p>
+<br><hr>
+
+
+{% for i in Recruiters %}
+   <div class="card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfJW7v4TfprjQz57iK4KHbU8XLX18kx8bxIBpqUlacbNCnO7Z" alt="Smiley face" style="float:right;width:250px;height:250px;">
+		<div class="container">
+                <center><h2>{{i.recruiter_name}}</h2></center>
+                <ul><li><p>Looking for undergraduates from <b>{{i.branch}}</b> field of engineering</p></li></ul>
+				<ul><li><p><b>Sector:</b> {{i.sector}}</p></li></ul>
+                <ul><li><p><b>Office location:</b> {{i.address}}<br></p></li></ul>
+                <ul><li><p><b>Website:</b> {{i.website}}</p></li></ul>
+                <ul><li><p><b>Email:</b><a href="gmail.com"> {{i.email_id}}</a></p></li></ul>
+                <ul><li><p>Maximum salary being offered this year: INR {{i.max_salary}} per annum</p></li></ul>
+        </div>
+   </div>
+{% endfor %}	
+<br><br>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>An ASE-II Project By Group A-12</a></p>
+</footer>
+
+       
+
+</body>
+</html>

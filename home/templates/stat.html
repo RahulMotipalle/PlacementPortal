@@ -1,0 +1,47 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<html>
+<head>
+<style>
+.actual {
+    background-color: lightgrey;
+    width: 1000px;
+    border: 25px solid green	;
+    padding: 100px;
+    margin: 100px;
+}
+
+</style>
+</head>
+<body bgcolor="peachpuff">
+
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="{% url 'index' %}" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'index' %}"><p>Return to Home</p></a>
+    </div>
+  </div>
+</div>
+
+<center>
+<h1><span style="color:white">Placement Statistics</span></h1>
+<div class="actual">
+
+<img src="{% static 'bar-graph.png' %}" style="width:500px;height:300px;">
+<br><br>
+<img src="{% static 'bar1.png' %}" style="width:500px;height:300px;"><br>
+<br><br>
+<img src="{% static 'bar2.png' %}" style="width:500px;height:300px;">
+</center>
+</div>
+</body>
+</html>

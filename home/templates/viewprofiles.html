@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			margin-left:20px;
+			margin-right:20px;
+        }
+
+        .container {
+            padding: 0 16px;
+			background-color: #ffdab9;
+        }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: black;
+	    font-weight: bold;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+       .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+    </style>
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+</head>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="{% url 'index' %}" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+		<p><a href="{% url 'eceprofiles' %}" class="w3-bar-item w3-button">ECE STUDENTS &emsp;
+		<a href="{% url 'cseprofiles' %}" class="w3-bar-item w3-button">CSE STUDENTS &emsp;        
+		<a href="{% url 'index' %}" class="w3-bar-item w3-button">Return to Home</a></p>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<h2><center>ALL Student Profiles</center></h2>
+<p>Displaying the list of all students registered for placements, in order of decreasing CGPA from top to bottom...</p>
+<!-- <p><button>View my Resume</button></p> -->
+<!--<div class="dropdown" style="float:left;">
+  <button class="dropbtn">CGPA Search</button>
+  <div class="dropdown-content" style="left:0;">
+    <a href="{% url 'descending' %}" class="w3-bar-item w3-button">Descending</a>
+    <a href="{% url 'ascending' %}" class="w3-bar-item w3-button">Ascending</a>
+    
+  </div>
+</div>
+-->
+<br><hr>
+
+{% for i in Students %}
+    
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfJW7v4TfprjQz57iK4KHbU8XLX18kx8bxIBpqUlacbNCnO7Z" alt="Smiley face" style="float:right;width:250px;height:250px;">
+
+		<div class="container">
+                <center><h2>{{i.student_name}}</h2></center>
+                <ul><li><p class="title">{{i.branch}} Undergraduate</p></li></ul>
+				<ul><li><p><b>CGPA: </b>{{i.cgpa}}</p></li></ul>
+                <p><b>Projects I've worked on:</b> {{i.projects}} </p>
+				<ul><li>Internships at: {{i.internships}}</li></ul>
+				<ul><li>Achievements: {{i.achievements}}</li></ul>
+                <p><b>Contact me by email at: </b><a href="gmail.com">{{i.email_id}}</a></p>
+                <p><button class="button">View my Resume</button></p>
+            	</div>
+			
+        </div>
+    <br>
+{% endfor %}        
+
+</body>
+</html>

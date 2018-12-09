@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h2><center>Student Profiles</center></h2>
+<br>
+<p>Displaying the profiles of students who took your final interview round...</p>
+<br>
+
+<div class="row">
+        <div class="card">
+        <table><tr>    
+	<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfJW7v4TfprjQz57iK4KHbU8XLX18kx8bxIBpqUlacbNCnO7Z" alt="Jane" style="width:100%,height:80%"></td>
+        <td><div class="container">
+                <h2>Arjun Partha</h2>
+                <p class="title">CSE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Self-driving car, Stock Market Prediction using Data Analytics</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/arjunpartha</p>
+                <p><button class="button">HIRE ME!</button></p>
+	</td>
+            </div>
+        </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPWXSLmn_FvvUeO5zMolGQQFf6pQHFfv9l_-a7H43qlz_DyJ2" alt="Mike" style="width:100%,height:80%">
+            <div class="container">
+                <h2>Krishna Manohar</h2>
+                <p class="title">ECE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Multihop Communication, Smart Transportation System for Smart Cities</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/krishnamanohar</p>
+                <p><button class="button">HIRE ME!</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqnn6ozflqt1VzVQmXS_xf-iVQHgH3CJnclXKXh0LoGLl3yLTS" alt="John" style="width:100%,height:80%">
+            <div class="container">
+                <h2>Pavan Surya</h2>
+                <p class="title">CSE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Detection of Water bodies using remote sensing, LTE Simulation</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/pavansurya</p>
+                <p><button class="button">HIRE ME!</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfJW7v4TfprjQz57iK4KHbU8XLX18kx8bxIBpqUlacbNCnO7Z" alt="Jane" style="width:100%,height:80%">
+            <div class="container">
+                <h2>Partha Sarathy</h2>
+                <p class="title">CSE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Self-driving car, Stock Market Prediction using Data Analytics</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/parthasarathy</p>
+                <p><button class="button">HIRE ME!</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPWXSLmn_FvvUeO5zMolGQQFf6pQHFfv9l_-a7H43qlz_DyJ2" alt="Mike" style="width:100%,height:80%">
+            <div class="container">
+                <h2>Rama Krishna</h2>
+                <p class="title">ECE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Multihop Communication, Smart Transportation System for Smart Cities</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/ramakrishna</p>
+                <p><button class="button">HIRE ME!</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqnn6ozflqt1VzVQmXS_xf-iVQHgH3CJnclXKXh0LoGLl3yLTS" alt="John" style="width:100%,height:80%">
+            <div class="container">
+                <h2>Shiva Murugan</h2>
+                <p class="title">CSE Undergraduate</p>
+                <p><b>Projects I've worked on:</b> <br> Detection of Water bodies using remote sensing, LTE Simulation</p>
+                <p><b>Link to my GitHub profile:</b></p>
+                <p>github.com/shivamurugan</p>
+                <p><button class="button">HIRE ME!</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

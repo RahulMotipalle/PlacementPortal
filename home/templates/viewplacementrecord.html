@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			margin-left:20px;
+			margin-right:20px;
+        }
+
+        .container {
+            padding: 0 16px;
+			background-color: #ffdab9;
+        }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: black;
+	    font-weight: bold;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="{% url 'placementhome' %}" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">        
+		<p><a href="{% url 'placementhome' %}" class="w3-bar-item w3-button">Return to Home</a></p>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<h2><center>ALL Student Profiles</center></h2>
+<p>Displaying the list of all students registered for placements, in order of decreasing CGPA from top to bottom...</p>
+<br><hr>
+
+{% for i in Records %}
+    
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjfJW7v4TfprjQz57iK4KHbU8XLX18kx8bxIBpqUlacbNCnO7Z" alt="Smiley face" style="float:right;width:250px;height:250px;">
+
+		<div class="container">
+                <center><h2>{{i.student}}</h2></center>
+                <ul><li><p><b>Company I got placed in:</b> {{i.recruiter}}</p></li></ul>
+				<ul><li><p><b>My starting package: </b> Rs.{{i.salary}}</p></li></ul>
+				<ul><li><p><b>Passout year: </b> {{i.passout_year}}</p></li></ul>
+            	</div>
+        </div>
+
+    <br><br>
+{% endfor %}        
+
+</body>
+</html>

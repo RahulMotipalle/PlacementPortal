@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>IIITS Placement Coordinator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+
+<style>
+#image1,#image2,#image3,#image4,#image5,#image6,#image7,#image8 {
+width: 1080px;
+height: 300px
+}
+
+#image1:hover {opacity:0.8}
+#image2:hover {opacity:0.8}
+#image3:hover {opacity:0.8}
+#image4:hover {opacity:0.8}
+#image5:hover {opacity:0.8}
+#image6:hover {opacity:0.8}
+#image7:hover {opacity:0.8}
+#image8:hover {opacity:0.8}
+
+#recruitfromcollege {
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+}
+</style>
+
+<body onload="noBack();" 
+  onpageshow="if (event.persisted) noBack();" onunload="">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Coordinator Panel,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+     
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>*
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="https://img.collegepravesh.com/2018/01/IIIT-Sri-City.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Placements @ IIIT Sri City</b></span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="recruit">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege"><center><b>PLACEMENT COORDINATOR</b></h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Enlist Registered Students</div>
+        <a href="{% url 'enlist' %}"><img src="https://cdn3.vectorstock.com/i/1000x1000/21/77/agenda-list-icon-vector-9592177.jpg" alt="Student profiles" style="width:100%" id="image1"></a>
+      </div>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Add placement record</div>
+       <a href="{% url 'addrecord' %}"><img src="https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/072010/Untitled-1_81.gif?itok=vvnaMP96" alt="Placement Statistics" style="width:100%" id="image2"></a>
+      </div>
+    </div>
+   
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">View Placement Records</div>
+       <a href="{% url 'viewplacementrecord' %}"><img src="https://careerconfidential.com/wp-content/uploads/2013/05/interview-1018333_1920-1080x600.png" alt="Placement Statistics" style="width:100%" id="image2">
+      </div>
+    </div>
+   <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Delete student/event</div>
+       <a href="http://localhost:8002/admin/home/student/"><img src="https://t4.ftcdn.net/jpg/01/90/12/55/500_F_190125512_iNTqVVsZV5C7sK0raVWqMO1qMbUw3AAc.jpg" alt="Placement Statistics" style="width:100%" id="image2"></a>
+      </div>
+    </div>
+   </div>
+    
+<br><br>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>An ASE-II Project By Group A-12</a></p>
+</footer>
+</body>
+</html>

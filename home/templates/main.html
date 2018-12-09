@@ -1,0 +1,210 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<title>IIITS Placement Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+#image1,#image2,#image3,#image4,#image5,#image6,#image7,#image8 {
+width: 1080px;
+height: 260px;
+
+}
+
+#image1:hover {opacity:0.8}
+#image2:hover {opacity:0.8}
+#image3:hover {opacity:0.8}
+#image4:hover {opacity:0.8}
+#image5:hover {opacity:0.8}
+#image6:hover {opacity:0.8}
+#image7:hover {opacity:0.8}
+#image8:hover {opacity:0.8}
+
+#recruitfromcollege {
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+}
+
+#achieverszone {
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+}
+
+
+.testcontainer {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.testcontainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.testcontainer img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.testcontainer span {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .testcontainer {
+      text-align: center;
+  }
+  .testcontainer img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	float:right;
+
+}
+</style>
+
+
+<body>
+
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+	<a href="#home" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+	<a href="#home" class="w3-bar-item w3-button">Home</a>
+	<a href="#recruit" class="w3-bar-item w3-button">Get into Action</a>
+	<a href="#achieverszone" class="w3-bar-item w3-button">Achievers' Zone</a>
+	<a href="{% url 'landing' %}" class="w3-bar-item w3-button" onclick="clicked()">Log Out</a>    
+	</div>
+  </div>
+</div>
+
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="{% static 'college.jpg' %}" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Placements @ IIIT Sri City</b></span></h1>
+  </div>
+</header>
+
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="recruit">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="recruitfromcollege"><center><b>Student's Portal</b></h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+	
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Notice Board</div>
+		
+        <a href="{% url 'studentnoticeboard' %}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYXW1g2_CzInlrUYA5aNIET_5Gh3yS9Plhz3h7DfVmhkcjUyp" alt="Student profiles" style="width:100%" id="image1"></a>
+      
+	  </div>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">View Visiting Companies</div>
+        <a href="{% url 'browse' %}"><img src="{% static 'job-search.png' %}" alt="Placement Statistics" style="width:100%" id="image2">
+      </div>
+    </div>
+	
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Update Profile</div>
+        <a href="{% url 'upload' %}"><img src="https://us.123rf.com/450wm/kowition/kowition1510/kowition151000008/45986117-resume-vector.jpg?ver=6" alt="House" style="width:100%" id="image3"></a>
+      </div>
+    </div>
+	 
+     <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Placement Statistics</div>
+		<a href="{% url 'studentstats' %}"><img src="https://datasciencedojo.com/wp-content/uploads/statistics-for-teachers-professional-development_137460_large.jpg" alt="House" style="width:100%" id="image3"></a>
+      </div>
+    </div>
+
+</div>
+
+	
+<!--START ACHIEVERS' ZONE-->
+<hr><br>
+<div id="achieverszone">
+<div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" id="testimony" style="margin-top:20px;"><center><b>ACHIEVERS ZONE</b></h3>
+</div>
+
+<!--RETRIEVING PLACEMENT RECORDS FROM DATABASE-->
+{% for i in Records %}
+<div class="testcontainer">  
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5HBN_vbLu5pURUVEVLjim0v7xIQvRa02bMnRi1gnSYwTD2BG" alt="Avatar" style="width:90px">
+  <p style="font-size:15px;color:black">Hearty congratulations to <span><b>{{i.student}}</b></span> for getting placed in  <span><b>{{i.recruiter}}</b></span> with a package of <span><b>INR {{i.salary}}</b></span> per annum!</b></span>.   </p>
+</div>
+{% endfor %}
+
+</div>
+<!--END ACHIEVERS' ZONE-->
+  
+
+<script type="text/javascript">
+    function clicked() {
+       if (confirm('Are you sure you want to log out?')) {
+           yourformelement.submit();
+       } else {
+           return false;
+       }
+    }
+</script>
+
+
+
+
+
+<!-- End page content -->
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>An ASE-II Project By Group A-12</a></p>
+</footer>
+
+<!-- Add Google Maps -->
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+</body>
+</html>--
