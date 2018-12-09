@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+	width:550px;
+}
+</style>
+</head>
+<body bgcolor="peachpuff">
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/IIIT_Sri_City_Logo.png/220px-IIIT_Sri_City_Logo.png" width="30px" height="30px">&emsp;<b>Placement Portal,</b> IIIT Sri City</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+     <a href="{% url 'placementhome' %}" class="w3-bar-item w3-button">Home</a>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<center><h3>Placement Record</h3></center>
+<br>
+<center>
+
+<!--FORM TO FILL DETAILS OF HIRING TEST-->
+<div class="container">
+  <form action="{% url 'placementhome' %}" method="POST">
+	{%csrf_token %}
+	
+	<!--STUDENT NAME LABEL-->    
+	<label for="student_name">Student Name</label>
+     <input type="text" id="student_name" name="student_name" placeholder="Student Name">
+	
+	<!--CGPA LABEL-->    
+	<label for="cgpa">Company Name</label>
+     <input type="text" id="cgpa" name="cgpa" placeholder="Name of the Company">
+	
+	<!--BRANCH LABEL-->	
+	<label for="branch">Salary</label>
+     <input type="text" id="branch" name="branch" placeholder="Salary">
+	
+	
+    <input type="submit" value="Submit">
+  </form>
+
+
+</div>
+</center>
+</body>
+</html>
