@@ -64,10 +64,10 @@ input[type=submit]:hover {
 	{%csrf_token %}
     <label for="recruiter">Company Name</label>
      <!--<input type="text" id="date" name="recruiter_name" required placeholder ="Your Company's Name"> -->
-     <input type="text" id="date" name="recruiter_name" required readonly value="{{ name }}"> 
-    <label for="date">Date</label>
+     <input type="text" id="date" name="recruiter_name" required value="{{ name }}"> 
+    <label for="date">Date</label><br>
      <!-- <input type="date" id="date" name="date" value="{{Interview.date|date:"Y-m-d" }}"> -->
-     <input type="text" id="date" name="date" required placeholder="DD/MM/YYYY"> 
+     <input id="datefield" style="width:100%" type="date" min="2018-12-11" name="date"><br><br>
 	<label for="start_time">Start Time</label>
      <input type="text" id="start_time" name="start_time" required placeholder="HH:MM (type in 24 hour format)">
 	<label for="end_time">End Time</label>

@@ -67,7 +67,7 @@ input[type=submit]:hover {
 	<!--COMPANY NAME LABEL-->    
 	<label for="recruiter_name">Company Name</label>
      <!-- <input type="text" id="recruiter_name" name="recruiter_name" required placeholder="Your Company's Name"> -->
-     <input type="text" id="recruiter_name" name="recruiter_name" required readonly value="{{ recruiter_name }}"> 
+     <input type="text" id="recruiter_name" name="recruiter_name" required value="{{ recruiter_name }}"> 
 	
 	<!--TEST TYPE LABEL-->    
 	<label for="test_type">Type of test:</label>
@@ -75,12 +75,12 @@ input[type=submit]:hover {
 	
 	<!--HIRING ROUND NUMBER LABEL-->	
 	<label for="round_number">Round Number:</label>
-     <input type="text" id="round_number" name="round_number" required placeholder="Specify which round of hiring, EG: 1/2/3 etc">
+     <input type="text" id="round_number" name="round_number" required placeholder="Specify which round of hiring, EG: 1/2/3 etc"><br>
 	
 	<!--TEST DATE LABEL-->
 	<label for="test_date">Date of Examination:</label>
-     <input type="text" id="test_date" name="test_date" required placeholder="DD/MM/YYYY  (Enter the date on which you wish to conduct the test)">
-	
+     <input id="datefield" style="width:100%" type="date" min="2018-12-11" name="test_date"><br><br>
+	 
 
 	<!--MINIMUM GPA LABEL-->
 	<label for="gpa_cutoff">Minimum GPA required to appear for test:</label>
