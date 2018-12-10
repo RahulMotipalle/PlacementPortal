@@ -173,7 +173,7 @@ def addvacancies(request):
 
 
 def viewnoticeboard(request):
-	return render(request, 'noticeboard2.html', {"Recruiters":Recruiter.objects.all(), "Interviews":Interview.objects.all(), "Hiringtests": Hiringtest.objects.all(), "Vacancys": Vacancy.objects.all().order_by('-expected_salary')})
+	return render(request, 'noticeboard2.html', {"Recruiters":Recruiter.objects.all(), "Interviews":Interview.objects.filter(date__gte='2018-12-11'), "Hiringtests": Hiringtest.objects.filter(test_date__gte='2018-12-11'), "Vacancys": Vacancy.objects.all().order_by('-expected_salary')})
 
 
 
@@ -212,7 +212,7 @@ def studenthome(request):
 	return render(request,'studenthome.html', context)	
 
 def studentnoticeboard(request):
-	return render(request, 'noticeboard.html', {"Recruiters":Recruiter.objects.all(), "Interviews":Interview.objects.all(), "Hiringtests": Hiringtest.objects.all(), "Vacancys": Vacancy.objects.all().order_by('-expected_salary')})
+	return render(request, 'noticeboard.html', {"Recruiters":Recruiter.objects.all(), "Interviews":Interview.objects.filter(date__gte='2018-12-11'), "Hiringtests": Hiringtest.objects.filter(test_date__gte='2018-12-11'), "Vacancys": Vacancy.objects.all().order_by('-expected_salary')})
 
 def apply(request):
 	return render(request, 'apply.html')
@@ -227,7 +227,7 @@ def browse(request):
 
 def itcompanies(request):
 	comps=Recruiter.objects.all().filter(max_salary=700000)
-	context={"Companies": comps}
+	context={"Recruiters": comps}
 	return render(request, 'itcompanies.html', context)
 
 
@@ -241,7 +241,7 @@ def itcompanies(request):
 def corecompanies(request):
 	coms=Recruiter.objects.all().order_by('-max_salary')
 	corecomps=coms.filter(sector="Core")
-	context={"Companies": corecomps}
+	context={"Recruiters": corecomps}
 	return render(request, 'corecompanies.html', context)		
 
 

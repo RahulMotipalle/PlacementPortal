@@ -61,7 +61,7 @@ class Hiringtest(models.Model):
 	recruiter_name=models.CharField(max_length=50, default="company1", editable=True, null=False)
 	test_type=models.CharField(max_length=200,null=False)
 	round_number=models.IntegerField(default=1,null=False)
-	test_date=models.CharField(max_length=20, default="02/11/2018", editable=True, null=False)
+	test_date=models.DateField(max_length=20, default="2018-12-11", editable=True, null=False)
 	gpa_cutoff=models.CharField(max_length=10,null=False)
 
 	def __str__(self):
@@ -71,7 +71,7 @@ class Hiringtest(models.Model):
 class Interview(models.Model):
 	recruiter_name=models.CharField(max_length=50, default="company1", editable=True, null=False)
 	#date=models.DateField(null=True) 
-	date=models.CharField(max_length=20, default="02/11/2018", editable=True, null=False)
+	date=models.DateField(max_length=20, default="2018-12-11", editable=True, null=False)
 	start_time=models.CharField(max_length=10,default="10 am", editable=True, null=False)
 	end_time=models.CharField(max_length=10,default="10 am", editable=True, null=False)
 	room_type=models.CharField(max_length=50)
